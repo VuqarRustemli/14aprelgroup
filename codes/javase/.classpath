@@ -23,6 +23,7 @@
 	<classpathentry kind="src" path="src21"/>
 	<classpathentry kind="src" path="src22"/>
 	<classpathentry kind="src" path="src23"/>
+	<classpathentry kind="src" path="src24"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

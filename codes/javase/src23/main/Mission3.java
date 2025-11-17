@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-public class Vuqar {
+public class Mission3 {
 
 	public static void main(String[] args) {
 		   Scanner sc = new Scanner(System.in);
