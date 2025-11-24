@@ -13,7 +13,7 @@ public class MyTask {
 	    }
 	}
 	
-	public boolean isOdd(int number) {
+	public boolean odds(int number) {
 	    return number % 2 != 0;
 	}
 }
