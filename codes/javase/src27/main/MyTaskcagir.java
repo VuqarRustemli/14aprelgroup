@@ -11,8 +11,8 @@ public class MyTaskcagir {
 		int maxNumber = m.maxNumber(15, 20);
 		System.out.println("Max number:" + maxNumber);
 		
-		int odds = m.odds(9);
-		System.out.println("9 tekdirmi?" + odds);
+		int isOdd = m.isOdd(9);
+		System.out.println("9 tekdirmi?" + isOdd);
 
 	}
 
