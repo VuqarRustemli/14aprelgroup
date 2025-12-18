@@ -35,6 +35,7 @@
 	<classpathentry kind="src" path="src33"/>
 	<classpathentry kind="src" path="src34"/>
 	<classpathentry kind="src" path="src35"/>
+	<classpathentry kind="src" path="src36"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
