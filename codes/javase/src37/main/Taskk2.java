@@ -3,19 +3,18 @@ package main;
 import java.util.Scanner;
 
 public class Taskk2 {
-
-	public static void main(String[] args) {
-		public enum Days {
-		    BAZAR_ERTESI,
-		    CERSENBE_AXSAMI,
-		    CERSENBE,
-		    CUME_AXSAMI,
-		    CUME,
-		    SENBE,
-		    BAZAR
-		}
-		
-		
+	
+	public enum Days {
+	    BAZAR_ERTESI,
+	    CERSENBE_AXSAMI,
+	    CERSENBE,
+	    CUME_AXSAMI,
+	    CUME,
+	    SENBE,
+	    BAZAR
+	}
+	
+	public static void main(String[] args) {		
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Günü daxil edin: ");
