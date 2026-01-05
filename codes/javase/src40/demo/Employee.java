@@ -7,7 +7,6 @@ public class Employee extends Personn {
     String username;
     String password;
 
-    @Override
     void printInfo() {
         super.printInfo();
 
