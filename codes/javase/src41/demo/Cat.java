@@ -1,6 +1,6 @@
 package demo;
 
-public class Cat extends Animal {
+public class Cat extends Animall {
 
     private String breed;
 
