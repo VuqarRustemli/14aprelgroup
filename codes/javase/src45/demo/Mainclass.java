@@ -3,7 +3,7 @@ package demo;
 public class Mainclass {
     public static void main(String[] args) {
 
-        Transport t1 = new Car();
+        Transport t1 = new Carr();
         Transport t2 = new Bus();
         Transport t3 = new Bicycle();
 
