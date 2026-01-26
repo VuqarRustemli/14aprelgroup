@@ -6,8 +6,8 @@ public class MAin {
         School school = new School();
         Student student = school.new Student();
 
-        student.name = "Ali";
-        student.grade = 9;
+        student.name = "Vuqar";
+        student.grade = 7;
 
         student.showInfo();
     }
