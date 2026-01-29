@@ -1,5 +1,7 @@
 package demo;
 
+import demo.School.Student;
+
 public class MAin {
     public static void main(String[] args) {
 

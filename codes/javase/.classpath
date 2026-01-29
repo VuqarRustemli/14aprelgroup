@@ -50,6 +50,7 @@
 	<classpathentry kind="src" path="src48"/>
 	<classpathentry kind="src" path="src49"/>
 	<classpathentry kind="src" path="src50"/>
+	<classpathentry kind="src" path="src51"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
