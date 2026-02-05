@@ -10,7 +10,7 @@ public class Box<T> {
         return value;
     }
 
-    public <E> void printAny(E data) {
+    public <A> void printAny(A data) {
         System.out.println("Generic metoddan gelen deyer: " + data);
     }
 }
