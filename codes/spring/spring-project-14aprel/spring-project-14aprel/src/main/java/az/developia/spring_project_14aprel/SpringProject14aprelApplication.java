@@ -13,10 +13,10 @@ import az.developia.spring_project_14aprel.entity.Home;
 import az.developia.spring_project_14aprel.entity.Person;
 
 @SpringBootApplication
-public class Main {
+public class SpringProject14aprelApplication {
 
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(Main.class, args);
+        ApplicationContext context = SpringApplication.run(SpringProject14aprelApplication.class, args);
 
         Book book = context.getBean(Book.class);
         
@@ -35,7 +35,7 @@ public class Main {
         
         
         
-        ApplicationContext context1 = SpringApplication.run(Main.class, args);
+        ApplicationContext context1 = SpringApplication.run(SpringProject14aprelApplication.class, args);
 
         Home h1 = context1.getBean(Home.class);
         Home h2 = context1.getBean(Home.class);
@@ -46,7 +46,7 @@ public class Main {
         
         
         ApplicationContext context2 =
-                new AnnotationConfigApplicationContext(Main.class);
+                new AnnotationConfigApplicationContext(SpringProject14aprelApplication.class);
 
         Computer computer = context2.getBean(Computer.class);
 
@@ -58,7 +58,7 @@ public class Main {
         
 
         ApplicationContext context3 =
-                new AnnotationConfigApplicationContext(Main.class);
+                new AnnotationConfigApplicationContext(SpringProject14aprelApplication.class);
 
         Employee employee = context3.getBean(Employee.class);
 
