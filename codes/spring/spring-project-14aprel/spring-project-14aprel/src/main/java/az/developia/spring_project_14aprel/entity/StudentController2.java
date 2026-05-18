@@ -28,6 +28,6 @@ public class StudentController2 {
 
         students.add(student);
 
-        return "student";
+        return "redirect:/";
     }
 }

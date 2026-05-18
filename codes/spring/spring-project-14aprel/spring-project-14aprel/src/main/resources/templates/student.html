@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title>Students Page</title>
 </head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+
 <body>
 
 	<h1>Students List</h1>
@@ -33,5 +41,26 @@
 		</tbody>
 
 	</table>
+	
+	
+	
+	
+	<form th:action="@{/add}" method="post" th:object="${student}">
+
+    Name:
+    <input type="text" th:field="*{name}">
+    <br><br>
+
+    Age:
+    <input type="number" th:field="*{age}">
+    <br><br>
+
+    Course:
+    <input type="text" th:field="*{course}">
+    <br><br>
+
+    <button type="submit">Add Student</button>
+
+</form>
 </body>
 </html>
