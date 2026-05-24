@@ -10,4 +10,14 @@ public class AppConfig {
     public Person person() {
         return new Person();
     }
+
+	public char[] getVersion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public char[] getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
