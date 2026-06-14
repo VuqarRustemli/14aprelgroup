@@ -12,6 +12,7 @@ import az.developia.spring_project_14aprel.entity.Computer;
 import az.developia.spring_project_14aprel.entity.Employee;
 import az.developia.spring_project_14aprel.entity.Home;
 import az.developia.spring_project_14aprel.entity.Person;
+import az.developia.spring_project_14aprel.entity.User;
 
 @SpringBootApplication
 public class SpringProject14aprelApplication {
@@ -82,6 +83,7 @@ public class SpringProject14aprelApplication {
      AppService h2 = run.getBean(AppService.class);
      System.out.println(h1);
     System.out.println(h2);
+    
     }
  
 }
