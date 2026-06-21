@@ -1,45 +1,27 @@
 package com.example.practice.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "cars")
 public class Car {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String name;
 	private String model;
 	private int year;
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getModel() {
-		return model;
-	}
-	
-	public void setModel(String model) {
-		this.model = model;
-	}
-	
-	public int getYear() {
-		return year;
-	}
-	
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public Car(String name, String model, int year) {
-		this.name = name;
-		this.model = model;
-		this.year = year;
-	}
-
-	@Override
-	public String toString() {
-		return "Car [name=" + name + ", model=" + model + ", year=" + year + "]";
-	}
-	
-	
-	
 }
