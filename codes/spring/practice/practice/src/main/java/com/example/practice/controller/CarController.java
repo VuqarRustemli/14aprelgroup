@@ -1,7 +1,6 @@
 package com.example.practice.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,26 +9,27 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.practice.Service.CarService;
 import com.example.practice.entity.Car;
 
-@Controller
-@RequestMapping
-@CrossOrigin
+@RestController
+@RequestMapping(path = "/cars")
+@CrossOrigin(origins = "*")
 public class CarController {
 	@Autowired
 	private CarService carservice;
 	
-    @GetMapping("/cars")
+    @GetMapping("/getcars")
     public String CarPage() {
 		return "Car";
     }
     
     
-    @PostMapping
-    public Car addCar(@RequestBody Car car) {
-        return carservice.addCar(car);
+    @PostMapping(path = "/add")
+    public void addCar(@RequestBody Car car) {
+        carservice.addCar(car);
     }
 
     @GetMapping
