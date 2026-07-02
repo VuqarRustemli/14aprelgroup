@@ -1,5 +1,6 @@
 package com.example.ComputerShopping.demo.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;  
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,6 +25,7 @@ public class Computer {
 		this.price = price;
 	}
 
+	@Column(name = "computer_price")
 	private Double price;
 
     public Computer() {

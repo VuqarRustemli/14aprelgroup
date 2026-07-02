@@ -18,4 +18,9 @@ public class UserController {
     public String register(@RequestBody User user) {
         return userService.register(user);
     }
+    
+    @GetMapping("/getcount")
+    public long getUserCount() {
+    	return userService.getUserCount();
+    }
 }

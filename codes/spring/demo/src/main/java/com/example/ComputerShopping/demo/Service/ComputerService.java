@@ -1,13 +1,18 @@
 package com.example.ComputerShopping.demo.Service;
 
-import java.util.List ;
+import java.util.List ; 
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.ComputerShopping.demo.Repository.ComputerRepo;
+import com.example.ComputerShopping.demo.RequestDto.ComputerRequestDto;
+import com.example.ComputerShopping.demo.ResponseDto.ComputerResponseDto;
 import com.example.ComputerShopping.demo.entity.Computer;
+
+import az.developia.spring_project_14aprel.entity.Book;
 
 @Service
 public class ComputerService {
@@ -43,13 +48,21 @@ public class ComputerService {
 //		return null;
 //    }
     
+	
+	@Autowired
+	public ModelMapper modelmapper;
+	
+	
     @Autowired
     private ComputerRepo repository;
 
-    public Computer addComputer(Computer computer) {
-        return repository.save(computer);
+    public String addComputer(ComputerRequestDto d) {
+		Computer computer = new Computer();
+		modelmapper.map(d, computer);
+		repository.save(computer);
+		return "Computer ugurla qeydiyyat edildi!";
     }
-
+    
     public List<Computer> getAllComputers() {
         return repository.findAll();
     }
@@ -71,10 +84,35 @@ public class ComputerService {
 		return repository.findByBrandContaining(brand);
 	}
 	
-	
-	
-
 	public List<Computer> findComputersByPriceRange(Double minPrice, Double maxPrice) {
 		return repository.findComputersByPriceRange(minPrice, maxPrice);
 	}
+
+	public ComputerResponseDto save(ComputerRequestDto dto) {
+		return repository.save(dto);
+	}
+
+	public ComputerResponseDto getById(Long id) {
+		 Optional<Computer> byId = repository.findById(id);
+		 
+		 ComputerResponseDto responsedto = new ComputerResponseDto();
+		 
+		 if(byId.isPresent()) {
+			 Computer computer = byId.get();
+			 modelmapper.map(computer, responsedto);
+		 }
+		 
+		 return responsedto;
+	}
+
+	public ComputerResponseDto update(Long id, ComputerRequestDto dto) {
+		return repository.update(id, dto);
+	}
+
+	
+	public List<Computer> pagination(Integer begin, Integer length) {
+		return repository.pagination(begin, length);
+	}
+	
+	
 }

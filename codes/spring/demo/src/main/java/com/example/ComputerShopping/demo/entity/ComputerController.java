@@ -3,6 +3,8 @@ package com.example.ComputerShopping.demo.entity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.ComputerShopping.demo.Repository.ComputerRepo;
+import com.example.ComputerShopping.demo.RequestDto.ComputerRequestDto;
+import com.example.ComputerShopping.demo.ResponseDto.ComputerResponseDto;
 import com.example.ComputerShopping.demo.Service.ComputerService;
 
 import az.developia.spring_project_14aprel.entity.Book;
@@ -161,7 +163,7 @@ public class ComputerController {
     private ComputerService service;
 
     @PostMapping
-    public Computer addComputer(@RequestBody Computer computer) {
+    public String addComputer(@RequestBody ComputerRequestDto computer) {
         return service.addComputer(computer);
     }
 
@@ -199,5 +201,30 @@ public class ComputerController {
     public List<Computer> findComputersByPriceRange(@RequestParam Double minPrice, Double maxPrice){
     	return service.findComputersByPriceRange(minPrice, maxPrice);
     }
+    
+    
+    @PostMapping
+    public ComputerResponseDto save(@RequestBody ComputerRequestDto dto) {
+        return service.save(dto);
+    }
+    
+    @GetMapping("/{id}")
+    public ComputerResponseDto getById(@PathVariable Long id) {
+        return service.getById(id);
+    }
+    
+    @PutMapping("/{id}")
+    public ComputerResponseDto update(@PathVariable Long id,
+                                      @RequestBody ComputerRequestDto dto) {
+        return service.update(id, dto);
+    }
+    
+    
+
+	@GetMapping(path = "/pagination/begin/{begin}/length/{length}") 
+	public List<Computer> pagination(@PathVariable Integer begin, @PathVariable Integer length) {
+		return service.pagination(begin, length);
+	}
+	
     
 }
