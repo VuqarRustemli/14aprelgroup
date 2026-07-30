@@ -19,6 +19,7 @@ import java.util.Optional;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @RestController
@@ -225,6 +226,12 @@ public class ComputerController {
 	public List<Computer> pagination(@PathVariable Integer begin, @PathVariable Integer length) {
 		return service.pagination(begin, length);
 	}
+	
+	
+    @GetMapping("/products")
+    public Page<Computer> getComputers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+        return service.getComputers(page, size);
+    }
 	
     
 }

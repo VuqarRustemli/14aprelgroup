@@ -1,10 +1,14 @@
 package com.example.ComputerShopping.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;  
+import jakarta.persistence.Column;  
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -60,4 +64,39 @@ public class Computer {
     public void setModel(String model) {
         this.model = model;
     }
+    
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
+    
+    
+    private String name;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "specification_id")
+    private Specification specification;
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Specification getSpecification() {
+        return specification;
+    }
+
+    public void setSpecification(Specification specification) {
+        this.specification = specification;
+    }
+    
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

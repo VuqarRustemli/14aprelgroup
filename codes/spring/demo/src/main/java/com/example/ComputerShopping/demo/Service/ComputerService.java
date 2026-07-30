@@ -5,9 +5,13 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.ComputerShopping.demo.Repository.ComputerRepo;
+import com.example.ComputerShopping.demo.Repository.ProductRepository;
 import com.example.ComputerShopping.demo.RequestDto.ComputerRequestDto;
 import com.example.ComputerShopping.demo.ResponseDto.ComputerResponseDto;
 import com.example.ComputerShopping.demo.entity.Computer;
@@ -113,6 +117,13 @@ public class ComputerService {
 	public List<Computer> pagination(Integer begin, Integer length) {
 		return repository.pagination(begin, length);
 	}
+	
+	
+	
+    public Page<Computer> getComputers(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return repository.findAll(pageable);
+    }
 	
 	
 }
