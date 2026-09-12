@@ -38,7 +38,7 @@ public class UserController {
     public void addUser(@Valid @RequestBody UserRequestDto dto, BindingResult br) throws OurRuntimeException {
     	
     	if(br.hasErrors()) {
-    		throw new OurRuntimeException(br);
+    		throw new OurRuntimeException(br, "Melumatlarin tamliginda problem var");
     	}
     	userService.addUser(dto);
     }
@@ -58,5 +58,8 @@ public class UserController {
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
     }
+    
+    
+
     
 }

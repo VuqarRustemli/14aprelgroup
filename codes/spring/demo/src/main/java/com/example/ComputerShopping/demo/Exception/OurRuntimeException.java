@@ -9,8 +9,8 @@ public class OurRuntimeException extends RuntimeException{
 		return b;
 	}
 
-	public OurRuntimeException(BindingResult br) {
-		super();
+	public OurRuntimeException(BindingResult br, String message) {
+		super(message);
 		this.b = br;
 	}
 }
